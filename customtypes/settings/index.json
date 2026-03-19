@@ -1,0 +1,28 @@
+{
+  "format": "custom",
+  "id": "settings",
+  "label": "settings",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "background": {
+        "type": "Group",
+        "config": {
+          "label": "Hintergrund",
+          "repeat": false,
+          "fields": {
+            "image": {
+              "type": "Image",
+              "config": {
+                "label": "Bild",
+                "constraint": {},
+                "thumbnails": []
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "kevinskammerkunst",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "slicemachine": "start-slicemachine"
+  },
+  "dependencies": {
+    "@nuxt/icon": "2.2.1",
+    "@nuxtjs/google-fonts": "3.2.0",
+    "@nuxtjs/tailwindcss": "6.14.0",
+    "nuxt": "^4.4.2",
+    "vue": "^3.5.30",
+    "vue-router": "^5.0.3"
+  },
+  "devDependencies": {
+    "@nuxtjs/prismic": "^5.2.0",
+    "@prismicio/client": "^7.21.6",
+    "@slicemachine/adapter-nuxt": "^0.3.95",
+    "slice-machine-ui": "^2.21.1"
+  }
+}
