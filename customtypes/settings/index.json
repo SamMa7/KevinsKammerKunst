@@ -10,13 +10,16 @@
         "type": "Group",
         "config": {
           "label": "Hintergrund",
-          "repeat": false,
+          "repeat": true,
           "fields": {
             "image": {
               "type": "Image",
               "config": {
                 "label": "Bild",
-                "constraint": {},
+                "constraint": {
+                  "width": 196,
+                  "height": 277
+                },
                 "thumbnails": []
               }
             }
