@@ -29,7 +29,6 @@ pnpm dev
 Build the application for production:
 
 ```bash
-# pnpm
 pnpm build
 ```
 
