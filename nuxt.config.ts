@@ -13,7 +13,8 @@ export default defineNuxtConfig({
     endpoint: apiEndpoint || repositoryName
   },
   css: [
-    '~/assets/css/main.css'
+    '~/assets/css/main.css',
+    '~/assets/css/bubble.css',
   ],
   googleFonts: {
     families: {

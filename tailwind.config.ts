@@ -1,6 +1,12 @@
 import type { Config } from 'tailwindcss'
 
 export default <Partial<Config>>{
+    purge: [
+        './app/pages/**/*.vue',
+        './app/layouts/**/*.vue',
+        './app/components/**/*.vue',
+        './app/slices/**/*.vue'
+    ],
     theme: {
         extend: {
             colors: { 
@@ -8,6 +14,7 @@ export default <Partial<Config>>{
                 primary: '#0E2444',
                 secondary: '#3E89E0',
                 teritiary: '#CAE9FF',
+                bubbleBg: '#f0f7ff',
                 grey: '#C9D7E3',
                 light: '#FAFBFF',
                 yellow: '#F7FF58',

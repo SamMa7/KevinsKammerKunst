@@ -1,6 +1,6 @@
 <template>
     <header class="h-fit w-full bg-dark text-light flex justify-center">
-        <div class="container flex justify-between px-5 py-1">
+        <div class="container-xl flex justify-between px-5 py-1">
             <div class="flex">
                 <img 
                     v-if="header?.data?.logo.url"

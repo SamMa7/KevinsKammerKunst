@@ -211,7 +211,7 @@ export type HeaderDocument<Lang extends string = string> =
     Lang
   >;
 
-type HomeDocumentDataSlicesSlice = TextBlockSlice;
+type HomeDocumentDataSlicesSlice = BlogpostsSlice;
 
 /**
  * Content for home documents
@@ -326,58 +326,83 @@ export type AllDocumentTypes =
   | SettingsDocument;
 
 /**
- * Primary content in *TextBlock → Default → Primary*
+ * Item in *Blogposts → Default → Primary → Posts*
  */
-export interface TextBlockSliceDefaultPrimary {
+export interface BlogpostsSliceDefaultPrimaryPostsItem {
   /**
-   * title field in *TextBlock → Default → Primary*
+   * Titel field in *Blogposts → Default → Primary → Posts*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: text_block.default.primary.title
+   * - **API ID Path**: blogposts.default.primary.posts[].title
    * - **Documentation**: https://prismic.io/docs/fields/text
    */
   title: prismic.KeyTextField;
 
   /**
-   * text field in *TextBlock → Default → Primary*
+   * Datum field in *Blogposts → Default → Primary → Posts*
+   *
+   * - **Field Type**: Date
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blogposts.default.primary.posts[].date
+   * - **Documentation**: https://prismic.io/docs/fields/date
+   */
+  date: prismic.DateField;
+
+  /**
+   * Post field in *Blogposts → Default → Primary → Posts*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: text_block.default.primary.text
+   * - **API ID Path**: blogposts.default.primary.posts[].post
    * - **Documentation**: https://prismic.io/docs/fields/rich-text
    */
-  text: prismic.RichTextField;
+  post: prismic.RichTextField;
 }
 
 /**
- * Default variation for TextBlock Slice
+ * Primary content in *Blogposts → Default → Primary*
+ */
+export interface BlogpostsSliceDefaultPrimary {
+  /**
+   * Posts field in *Blogposts → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blogposts.default.primary.posts[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  posts: prismic.GroupField<Simplify<BlogpostsSliceDefaultPrimaryPostsItem>>;
+}
+
+/**
+ * Default variation for Blogposts Slice
  *
  * - **API ID**: `default`
  * - **Description**: Default
  * - **Documentation**: https://prismic.io/docs/slices
  */
-export type TextBlockSliceDefault = prismic.SharedSliceVariation<
+export type BlogpostsSliceDefault = prismic.SharedSliceVariation<
   "default",
-  Simplify<TextBlockSliceDefaultPrimary>,
+  Simplify<BlogpostsSliceDefaultPrimary>,
   never
 >;
 
 /**
- * Slice variation for *TextBlock*
+ * Slice variation for *Blogposts*
  */
-type TextBlockSliceVariation = TextBlockSliceDefault;
+type BlogpostsSliceVariation = BlogpostsSliceDefault;
 
 /**
- * TextBlock Shared Slice
+ * Blogposts Shared Slice
  *
- * - **API ID**: `text_block`
- * - **Description**: TextBlock
+ * - **API ID**: `blogposts`
+ * - **Description**: Blogposts
  * - **Documentation**: https://prismic.io/docs/slices
  */
-export type TextBlockSlice = prismic.SharedSlice<
-  "text_block",
-  TextBlockSliceVariation
+export type BlogpostsSlice = prismic.SharedSlice<
+  "blogposts",
+  BlogpostsSliceVariation
 >;
 
 declare module "@prismicio/client" {
@@ -415,10 +440,11 @@ declare module "@prismicio/client" {
       SettingsDocumentData,
       SettingsDocumentDataBackgroundItem,
       AllDocumentTypes,
-      TextBlockSlice,
-      TextBlockSliceDefaultPrimary,
-      TextBlockSliceVariation,
-      TextBlockSliceDefault,
+      BlogpostsSlice,
+      BlogpostsSliceDefaultPrimaryPostsItem,
+      BlogpostsSliceDefaultPrimary,
+      BlogpostsSliceVariation,
+      BlogpostsSliceDefault,
     };
   }
 }

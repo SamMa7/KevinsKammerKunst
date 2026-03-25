@@ -6,7 +6,7 @@
             <ClientOnly>
                 <div 
                     v-if="bgImgUrls && bgImgUrls.length"
-                    class="absolute inset-0 grid overflow-hidden"
+                    class="absolute inset-0 grid overflow-hidden -z-10"
                     :style="gridStyle"
                 >
                     <div
@@ -18,7 +18,7 @@
                 </div>
                 <div class="overlay-dark" />
             </ClientOnly>
-            <div id="main-container" class="container bg-light z-10 px-14 py-10"> 
+            <div id="main-container" class="container-lg bg-light px-14 py-10 z-10"> 
                 <slot />
             </div>
         </div>

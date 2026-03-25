@@ -49,20 +49,31 @@ a {
 
 nav {
     & a {
-        @apply text-light hover:text-secondary text-xl;  
+        @apply text-light hover:text-secondary text-base text-nowrap;  
     }
 }
 
 /* TEXT */
 p {
-    @apply font-sans;
+    @apply font-sans max-w-lg;
 }
 
 /* MAIN */
-.container {
+.container-lg {
+    @apply w-full max-w-screen-lg;
+}
+.container-xl {
     @apply w-full max-w-screen-xl;
 }
 
 .overlay-dark {
     @apply bg-dark absolute w-full h-full opacity-50;
 }
+
+
+/*
+* NOTES:
+* not less then 400 weight
+* 45 -75 character per line
+* 
+*/

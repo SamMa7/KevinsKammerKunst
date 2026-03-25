@@ -1,0 +1,20 @@
+@tailwind components;
+@tailwind utilities;
+
+/* SPECH BUBBLE */
+.speech-bubble {
+    @apply relative p-4 border-4 border-primary mx-0 my-auto rounded-3xl bg-bubbleBg shadow-xl;
+}
+
+.speech-bubble:before,
+.speech-bubble:after {
+    @apply right-full top-[15%] border-transparent border-solid content-[''] h-0 w-0 absolute bg-clip-padding;
+}
+
+.speech-bubble:before {
+    @apply border-[26px] -mt-[34px] border-r-primary;
+}
+.speech-bubble:after {
+    @apply border-[20px] -mt-7 border-r-bubbleBg;
+}
+
