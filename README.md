@@ -13,7 +13,7 @@ pnpm install
 Start the development server on `http://localhost:3000`:
 
 ```bash
-pnpm slicemashine
+pnpm dev
 ```
 
 ## Start Prismic Slice Mashine
@@ -21,7 +21,7 @@ pnpm slicemashine
 Start the Slicemachine on `http://localhost:9999`:
 
 ```bash
-pnpm dev
+pnpm slicemashine
 ```
 
 ## Production
