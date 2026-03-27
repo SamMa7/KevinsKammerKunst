@@ -18,7 +18,13 @@ useSeoMeta({
 </script>
 
 <template> 
-
+    <NuxtImg 
+        v-if="page?.data.figure.url" 
+        :src="page?.data.figure.url" 
+        class="absolute z-30"
+        :style="{
+            left: -(page?.data.figure.dimensions?.width/4) + 'px'
+        }"
+    />
     <SliceZone :slices="page?.data.slices ?? []" :components="components" />
-
 </template>

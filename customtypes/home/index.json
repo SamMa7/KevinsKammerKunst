@@ -13,6 +13,14 @@
           "placeholder": ""
         }
       },
+      "figure": {
+        "type": "Image",
+        "config": {
+          "label": "Figure",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",

@@ -8,6 +8,7 @@ export default defineNuxtConfig({
     "@nuxtjs/tailwindcss",
     "@nuxtjs/google-fonts",
     "@nuxt/icon",
+    "@nuxt/image",
   ],
   prismic: {
     endpoint: apiEndpoint || repositoryName

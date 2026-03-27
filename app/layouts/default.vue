@@ -18,7 +18,7 @@
                 </div>
                 <div class="overlay-dark" />
             </ClientOnly>
-            <div id="main-container" class="container-lg bg-light px-14 py-10 z-10"> 
+            <div id="main-container" class="container-lg bg-light px-14 py-10 z-10 relative"> 
                 <slot />
             </div>
         </div>

@@ -218,6 +218,17 @@ type HomeDocumentDataSlicesSlice = BlogpostsSlice;
  */
 interface HomeDocumentData {
   /**
+   * Figure field in *home*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.figure
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  figure: prismic.ImageField<never>;
+
+  /**
    * Slice Zone field in *home*
    *
    * - **Field Type**: Slice Zone
