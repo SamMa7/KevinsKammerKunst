@@ -8,7 +8,7 @@
 
 .speech-bubble:before,
 .speech-bubble:after {
-    @apply right-full top-[15%] border-transparent border-solid content-[''] h-0 w-0 absolute bg-clip-padding;
+    @apply right-full top-[15%] border-transparent border-solid first:content-[''] h-0 w-0 absolute bg-clip-padding;
 }
 
 .speech-bubble:before {

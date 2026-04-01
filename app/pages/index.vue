@@ -21,7 +21,7 @@ useSeoMeta({
     <NuxtImg 
         v-if="page?.data.figure.url" 
         :src="page?.data.figure.url" 
-        class="absolute z-30"
+        class="absolute z-30 h-[600px]"
         :style="{
             left: -(page?.data.figure.dimensions?.width/4) + 'px'
         }"

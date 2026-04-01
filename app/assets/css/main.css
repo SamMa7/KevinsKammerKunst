@@ -31,11 +31,15 @@ h6 {
 }
 
 /* BUTTON */
-.btn-secondary, .btn-primary, .btn-link {
-    @apply w-fit px-5 py-2 text-lg cursor-pointer rounded-md transition-colors;
+.btn-secondary, .btn-primary, .btn-link, .btn-dark {
+    @apply w-fit text-lg cursor-pointer rounded-md transition-all duration-300 flex justify-center items-center;
 }
 .btn-primary {
     @apply bg-secondary border-secondary text-light hover:bg-primary;
+    @apply disabled:bg-grey disabled:pointer-events-none;
+}
+.btn-dark {
+    @apply bg-dark border-dark text-light hover:bg-primary;
     @apply disabled:bg-grey disabled:pointer-events-none;
 }
 .btn-link {
