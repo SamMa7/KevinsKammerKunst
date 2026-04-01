@@ -1,7 +1,7 @@
 import type { Config } from 'tailwindcss'
 
 export default <Partial<Config>>{
-    purge: [
+    content: [
         './app/pages/**/*.vue',
         './app/layouts/**/*.vue',
         './app/components/**/*.vue',

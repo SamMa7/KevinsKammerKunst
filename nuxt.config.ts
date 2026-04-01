@@ -1,7 +1,12 @@
 import { apiEndpoint, repositoryName } from "./slicemachine.config.json";
-// https://nuxt.com/docs/api/configuration/nuxt-config
+
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
+  router: {
+    options: {
+      scrollBehaviorType: 'smooth'
+    }
+  },
   devtools: { enabled: true },
   modules: [
     "@nuxtjs/prismic",
