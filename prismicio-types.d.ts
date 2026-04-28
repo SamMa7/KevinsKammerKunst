@@ -283,6 +283,71 @@ interface HomeDocumentData {
 export type HomeDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<HomeDocumentData>, "home", Lang>;
 
+type IllustrationsDocumentDataSlicesSlice = GallerySlice;
+
+/**
+ * Content for illustrations documents
+ */
+interface IllustrationsDocumentData {
+  /**
+   * Slice Zone field in *illustrations*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: illustrations.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/slices
+   */
+  slices: prismic.SliceZone<IllustrationsDocumentDataSlicesSlice>; /**
+   * Meta Title field in *illustrations*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: illustrations.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  meta_title: prismic.KeyTextField;
+
+  /**
+   * Meta Description field in *illustrations*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: illustrations.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *illustrations*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: illustrations.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  meta_image: prismic.ImageField<never>;
+}
+
+/**
+ * illustrations document from Prismic
+ *
+ * - **API ID**: `illustrations`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/content-modeling
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type IllustrationsDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<IllustrationsDocumentData>,
+    "illustrations",
+    Lang
+  >;
+
 /**
  * Item in *settings → Hintergrund*
  */
@@ -334,6 +399,7 @@ export type AllDocumentTypes =
   | FooterDocument
   | HeaderDocument
   | HomeDocument
+  | IllustrationsDocument
   | SettingsDocument;
 
 /**
@@ -416,6 +482,68 @@ export type BlogpostsSlice = prismic.SharedSlice<
   BlogpostsSliceVariation
 >;
 
+/**
+ * Item in *Gallery → Default → Primary → pictures*
+ */
+export interface GallerySliceDefaultPrimaryPicturesItem {
+  /**
+   * picture field in *Gallery → Default → Primary → pictures*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: gallery.default.primary.pictures[].picture
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  picture: prismic.ImageField<never>;
+}
+
+/**
+ * Primary content in *Gallery → Default → Primary*
+ */
+export interface GallerySliceDefaultPrimary {
+  /**
+   * pictures field in *Gallery → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: gallery.default.primary.pictures[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  pictures: prismic.GroupField<
+    Simplify<GallerySliceDefaultPrimaryPicturesItem>
+  >;
+}
+
+/**
+ * Default variation for Gallery Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type GallerySliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<GallerySliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Gallery*
+ */
+type GallerySliceVariation = GallerySliceDefault;
+
+/**
+ * Gallery Shared Slice
+ *
+ * - **API ID**: `gallery`
+ * - **Description**: Gallery
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type GallerySlice = prismic.SharedSlice<
+  "gallery",
+  GallerySliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -447,6 +575,9 @@ declare module "@prismicio/client" {
       HomeDocument,
       HomeDocumentData,
       HomeDocumentDataSlicesSlice,
+      IllustrationsDocument,
+      IllustrationsDocumentData,
+      IllustrationsDocumentDataSlicesSlice,
       SettingsDocument,
       SettingsDocumentData,
       SettingsDocumentDataBackgroundItem,
@@ -456,6 +587,11 @@ declare module "@prismicio/client" {
       BlogpostsSliceDefaultPrimary,
       BlogpostsSliceVariation,
       BlogpostsSliceDefault,
+      GallerySlice,
+      GallerySliceDefaultPrimaryPicturesItem,
+      GallerySliceDefaultPrimary,
+      GallerySliceVariation,
+      GallerySliceDefault,
     };
   }
 }

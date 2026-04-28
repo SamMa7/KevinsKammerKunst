@@ -5,4 +5,5 @@ import { defineSliceZoneComponents } from "@prismicio/vue";
 
 export const components = defineSliceZoneComponents({
   blogposts: defineAsyncComponent(() => import("./Blogposts/index.vue")),
+  gallery: defineAsyncComponent(() => import("./Gallery/index.vue")),
 });

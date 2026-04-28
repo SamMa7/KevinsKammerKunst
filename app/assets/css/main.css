@@ -71,7 +71,7 @@ p {
 }
 
 .overlay-dark {
-    @apply bg-dark absolute w-full h-full opacity-50;
+    @apply bg-dark absolute w-full h-full opacity-80;
 }
 
 

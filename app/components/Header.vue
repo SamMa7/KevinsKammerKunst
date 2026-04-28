@@ -2,7 +2,7 @@
     <header class="h-fit w-full bg-dark text-light flex justify-center">
         <div class="container-xl flex justify-between px-5 py-1">
             <div class="flex">
-                <img 
+                <NuxtImg 
                     v-if="header?.data?.logo.url"
                     :src="header?.data.logo.url"
                     :alt="header?.data.logo.alt ?? 'logo'"
