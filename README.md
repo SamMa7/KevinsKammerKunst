@@ -21,7 +21,7 @@ pnpm dev
 Start the Slicemachine on `http://localhost:9999`:
 
 ```bash
-pnpm slicemashine
+pnpm slicemachine
 ```
 
 ## Production
