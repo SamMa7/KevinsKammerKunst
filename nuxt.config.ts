@@ -7,6 +7,11 @@ export default defineNuxtConfig({
       scrollBehaviorType: 'smooth'
     }
   },
+  routeRules: {
+    "/home": {
+      redirect: "/",
+    },
+  },
   devtools: { enabled: true },
   modules: [
     "@nuxtjs/prismic",
