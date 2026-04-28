@@ -26,7 +26,7 @@
                 <slot />
 
                 <!--BACK TO TOP-->
-                <button id="scrollToTop" v-on:click="scrollToTop" class="opacity-0 btn-dark rounded-full size-12 fixed right-10 bottom-10">
+                <button id="scrollToTop" v-on:click="scrollToTop" class="opacity-0 btn-dark rounded-full size-12 fixed right-10 bottom-40">
                     <Icon name="mdi:arrow-up" size="25"/>
                 </button>
             </div>
