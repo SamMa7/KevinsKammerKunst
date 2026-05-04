@@ -348,6 +348,71 @@ export type IllustrationsDocument<Lang extends string = string> =
     Lang
   >;
 
+type PlainTextDocumentDataSlicesSlice = TextSlice;
+
+/**
+ * Content for plain Text documents
+ */
+interface PlainTextDocumentData {
+  /**
+   * Slice Zone field in *plain Text*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: plain_text.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/slices
+   */
+  slices: prismic.SliceZone<PlainTextDocumentDataSlicesSlice>; /**
+   * Meta Title field in *plain Text*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: plain_text.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  meta_title: prismic.KeyTextField;
+
+  /**
+   * Meta Description field in *plain Text*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: plain_text.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *plain Text*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: plain_text.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  meta_image: prismic.ImageField<never>;
+}
+
+/**
+ * plain Text document from Prismic
+ *
+ * - **API ID**: `plain_text`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/content-modeling
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type PlainTextDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<PlainTextDocumentData>,
+    "plain_text",
+    Lang
+  >;
+
 /**
  * Item in *settings → Hintergrund*
  */
@@ -400,6 +465,7 @@ export type AllDocumentTypes =
   | HeaderDocument
   | HomeDocument
   | IllustrationsDocument
+  | PlainTextDocument
   | SettingsDocument;
 
 /**
@@ -544,6 +610,48 @@ export type GallerySlice = prismic.SharedSlice<
   GallerySliceVariation
 >;
 
+/**
+ * Primary content in *Text → Default → Primary*
+ */
+export interface TextSliceDefaultPrimary {
+  /**
+   * text field in *Text → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text.default.primary.text
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  text: prismic.RichTextField;
+}
+
+/**
+ * Default variation for Text Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type TextSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<TextSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Text*
+ */
+type TextSliceVariation = TextSliceDefault;
+
+/**
+ * Text Shared Slice
+ *
+ * - **API ID**: `text`
+ * - **Description**: Text
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type TextSlice = prismic.SharedSlice<"text", TextSliceVariation>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -578,6 +686,9 @@ declare module "@prismicio/client" {
       IllustrationsDocument,
       IllustrationsDocumentData,
       IllustrationsDocumentDataSlicesSlice,
+      PlainTextDocument,
+      PlainTextDocumentData,
+      PlainTextDocumentDataSlicesSlice,
       SettingsDocument,
       SettingsDocumentData,
       SettingsDocumentDataBackgroundItem,
@@ -592,6 +703,10 @@ declare module "@prismicio/client" {
       GallerySliceDefaultPrimary,
       GallerySliceVariation,
       GallerySliceDefault,
+      TextSlice,
+      TextSliceDefaultPrimary,
+      TextSliceVariation,
+      TextSliceDefault,
     };
   }
 }

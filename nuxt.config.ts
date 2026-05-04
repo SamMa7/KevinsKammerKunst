@@ -26,6 +26,7 @@ export default defineNuxtConfig({
   css: [
     '~/assets/css/main.css',
     '~/assets/css/bubble.css',
+    '~/assets/css/richText.css',
   ],
   googleFonts: {
     families: {
