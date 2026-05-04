@@ -9,12 +9,13 @@
                     <Icon :name="`mdi:${link.link.text?.toLowerCase()}`" size="30"/>
                 </a>
             </div>
-            <div>
+            <div class="flex gap-3 justify-center">
                 <a 
-                    v-for="link in footer?.data.other_links" class="flex items-center"
+                    v-for="(link, index) in footer?.data.other_links" class="flex items-center"
                     :href="getUrl(link.link)"
                 > 
                     {{link.link.text}}
+                    <span v-if="index !== (footer?.data.other_links.length-1)" class="pl-3"> | </span>
                 </a>
             </div>
         </div>
