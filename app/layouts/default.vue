@@ -61,7 +61,6 @@
     // METHODS
     const updateGrid = () => {
         const element = window. document.getElementById('main-container');
-        console.log(element?.clientHeight)
 
         cols.value = Math.ceil(window.innerWidth / imgWidth);
         rows.value = Math.ceil((element ? element.clientHeight : window.innerHeight) / imgHeight);

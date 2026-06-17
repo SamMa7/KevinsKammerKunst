@@ -15,7 +15,7 @@
                     :href="getUrl(link.link)"
                 > 
                     {{link.link.text}}
-                    <span v-if="index !== (footer?.data.other_links.length-1)" class="pl-3"> | </span>
+                    <span v-if="index !== ((footer?.data.other_links.length ?? 0)-1)" class="pl-3"> | </span>
                 </a>
             </div>
         </div>

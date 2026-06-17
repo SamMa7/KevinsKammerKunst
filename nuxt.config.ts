@@ -2,6 +2,14 @@ import { apiEndpoint, repositoryName } from "./slicemachine.config.json";
 
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
+  experimental: { appManifest: false },
+  vite: {
+    optimizeDeps: {
+      include: [
+        '@prismicio/client',
+      ]
+    }
+  },
   router: {
     options: {
       scrollBehaviorType: 'smooth'
