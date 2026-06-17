@@ -14,7 +14,7 @@
     & ul {
         @apply list-inside list-disc;
     }
-     & ol {
+    & ol {
         @apply list-inside list-decimal;
     }
 }
