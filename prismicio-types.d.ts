@@ -749,20 +749,45 @@ export type BlogpostsSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Item in *Comic → Default → Primary → comics*
+ */
+export interface ComicSliceDefaultPrimaryComicsItem {
+  /**
+   * title field in *Comic → Default → Primary → comics*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: comic.default.primary.comics[].title
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * slides field in *Comic → Default → Primary → comics*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: comic.default.primary.comics[].slides
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  slides: prismic.Repeatable<
+    prismic.LinkField<string, string, unknown, prismic.FieldState, never>
+  >;
+}
+
+/**
  * Primary content in *Comic → Default → Primary*
  */
 export interface ComicSliceDefaultPrimary {
   /**
-   * Sides field in *Comic → Default → Primary*
+   * comics field in *Comic → Default → Primary*
    *
-   * - **Field Type**: Link
+   * - **Field Type**: Group
    * - **Placeholder**: *None*
-   * - **API ID Path**: comic.default.primary.sides
-   * - **Documentation**: https://prismic.io/docs/fields/link
+   * - **API ID Path**: comic.default.primary.comics[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
    */
-  sides: prismic.Repeatable<
-    prismic.LinkField<string, string, unknown, prismic.FieldState, never>
-  >;
+  comics: prismic.GroupField<Simplify<ComicSliceDefaultPrimaryComicsItem>>;
 }
 
 /**
@@ -1106,6 +1131,7 @@ declare module "@prismicio/client" {
       BlogpostsSliceVariation,
       BlogpostsSliceDefault,
       ComicSlice,
+      ComicSliceDefaultPrimaryComicsItem,
       ComicSliceDefaultPrimary,
       ComicSliceVariation,
       ComicSliceDefault,

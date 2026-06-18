@@ -7,8 +7,14 @@ export default defineNuxtConfig({
     optimizeDeps: {
       include: [
         '@prismicio/client',
+        '@evomark/flipbook-vue',
       ]
     }
+  },
+  vue: {  
+    compilerOptions: {
+      isCustomElement: (tag) => ['flipbook'].includes(tag),
+    },
   },
   router: {
     options: {
@@ -36,6 +42,7 @@ export default defineNuxtConfig({
     '~/assets/css/main.css',
     '~/assets/css/bubble.css',
     '~/assets/css/richText.css',
+    '~/assets/css/flipbook.css'
   ],
   googleFonts: {
     families: {

@@ -15,27 +15,35 @@
     </div>
 
     <Modal v-model:show-modal="open">
-      <div class="p-10 flex size-full justify-between">
+      <div class="bg-light z-50 fixed top-2/4 left-2/4 -translate-x-1/2 -translate-y-1/2 w-3/6 h-5/6 rounded-md">
         <button 
-          class="btn-dark rounded-full size-12 self-center"
-          :disabled="currentIndex === 0"
-          @click="prevImage()"
-        >
-          <Icon name="mdi:arrow-left" size="25"/>
+            class="btn-link fixed right-5 top-5"  
+            @click="open = false"
+        > 
+            <Icon name="mdi:close" size="25"/> 
         </button>
-        <NuxtImg 
-          class="object-contain max-w-[80%]" 
-          loading="lazy" 
-          :alt="slice.primary.pictures[currentIndex]?.picture.alt" 
-          :src="slice.primary.pictures[currentIndex]?.picture.url ?? undefined"
-        />
-        <button 
-          class="btn-dark rounded-full size-12 self-center"
-          :disabled="currentIndex === slice.primary.pictures.length-1"
-          @click="nextImage()"
-        >
-          <Icon name="mdi:arrow-right" size="25"/>
-        </button>
+          <div class="p-10 flex size-full justify-between">
+            <button 
+              class="btn-dark rounded-full size-12 self-center"
+              :disabled="currentIndex === 0"
+              @click="prevImage()"
+            >
+              <Icon name="mdi:arrow-left" size="25"/>
+            </button>
+            <NuxtImg 
+              class="object-contain max-w-[80%]" 
+              loading="lazy" 
+              :alt="slice.primary.pictures[currentIndex]?.picture.alt" 
+              :src="slice.primary.pictures[currentIndex]?.picture.url ?? undefined"
+            />
+            <button 
+              class="btn-dark rounded-full size-12 self-center"
+              :disabled="currentIndex === slice.primary.pictures.length-1"
+              @click="nextImage()"
+            >
+              <Icon name="mdi:arrow-right" size="25"/>
+            </button>
+          </div>
       </div>
     </Modal>
   </section>
@@ -48,7 +56,7 @@
   defineProps(getSliceComponentProps<Content.GallerySlice>());
 
   const open = ref(false);
-  const currentIndex = ref(0)
+  const currentIndex = ref(0);
 
   const openPictureModal = (index: number) => {
     if(!index && index !== 0) return;

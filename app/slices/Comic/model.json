@@ -1,0 +1,46 @@
+{
+  "id": "comic",
+  "type": "SharedSlice",
+  "name": "Comic",
+  "description": "Comic",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "comics": {
+          "type": "Group",
+          "config": {
+            "label": "comics",
+            "repeat": true,
+            "fields": {
+              "title": {
+                "type": "Text",
+                "config": {
+                  "label": "title",
+                  "placeholder": ""
+                }
+              },
+              "slides": {
+                "type": "Link",
+                "config": {
+                  "label": "slides",
+                  "placeholder": "",
+                  "select": null,
+                  "allowTargetBlank": false,
+                  "allowText": false,
+                  "repeat": true
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

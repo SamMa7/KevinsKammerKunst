@@ -1,0 +1,6 @@
+@import "@evomark/flipbook-vue/style";
+
+.flipbook {
+    @apply h-[90vh] w-[90vw];
+
+}

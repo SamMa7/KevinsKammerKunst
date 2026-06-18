@@ -3,8 +3,8 @@
 
   defineProps(getSliceComponentProps<Content.YoutubeVideoPlaylistSlice>());
     
-  const containerRef = ref(null)
-  const swiper = useSwiper(containerRef)
+  const swiperRef = ref(null)
+  const swiper = useSwiper(swiperRef)
 </script>
 
 <template>
@@ -15,7 +15,7 @@
     <h2>{{ slice.primary.optionalTitel }}</h2>
     <div class="pt-2">
       <ClientOnly>
-        <swiper-container ref="containerRef" :slides-per-view="3">
+        <swiper-container ref="swiperRef" :slides-per-view="3">
           <swiper-slide
             v-for="(video, idx) in slice.primary.playlist"
             :key="idx"
