@@ -85,6 +85,19 @@ p {
     opacity: 0;
 }
 
+.single-youtube-video, 
+.playlist-youtube-video {
+    @apply flex items-center;
+}
+
+.single-youtube-video > iframe {
+    @apply w-full h-4/5 aspect-video;
+}
+
+.playlist-youtube-video > iframe {
+    @apply w-[350px] h-auto aspect-video;
+}
+
 /*
 * NOTES:
 * not less then 400 weight

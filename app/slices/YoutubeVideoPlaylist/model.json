@@ -1,0 +1,42 @@
+{
+  "id": "youtube_video_playlist",
+  "type": "SharedSlice",
+  "name": "YoutubeVideoPlaylist",
+  "description": "YoutubeVideoPlaylist",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "optionalTitel": {
+          "type": "Text",
+          "config": {
+            "label": "Optional Titel",
+            "placeholder": ""
+          }
+        },
+        "playlist": {
+          "type": "Group",
+          "config": {
+            "label": "Playlist",
+            "repeat": true,
+            "fields": {
+              "video": {
+                "type": "Embed",
+                "config": {
+                  "label": "video",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

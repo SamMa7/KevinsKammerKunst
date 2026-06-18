@@ -18,3 +18,9 @@
         @apply list-inside list-decimal;
     }
 }
+
+.video-text {
+    & p {
+        @apply text-center self-center;
+    }
+}

@@ -69,6 +69,138 @@ type ContentRelationshipFieldWithData<
   >;
 }[Exclude<TCustomType[number], string>["id"]];
 
+type ComicsDocumentDataSlicesSlice = ComicSlice;
+
+/**
+ * Content for comics documents
+ */
+interface ComicsDocumentData {
+  /**
+   * Slice Zone field in *comics*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: comics.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/slices
+   */
+  slices: prismic.SliceZone<ComicsDocumentDataSlicesSlice>; /**
+   * Meta Title field in *comics*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: comics.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  meta_title: prismic.KeyTextField;
+
+  /**
+   * Meta Description field in *comics*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: comics.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *comics*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: comics.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  meta_image: prismic.ImageField<never>;
+}
+
+/**
+ * comics document from Prismic
+ *
+ * - **API ID**: `comics`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/content-modeling
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ComicsDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<ComicsDocumentData>,
+    "comics",
+    Lang
+  >;
+
+type FinsterkammerDocumentDataSlicesSlice =
+  | YoutubeVideoPlaylistSlice
+  | YoutubeVideoSlice;
+
+/**
+ * Content for finsterKammer documents
+ */
+interface FinsterkammerDocumentData {
+  /**
+   * Slice Zone field in *finsterKammer*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: finsterkammer.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/slices
+   */
+  slices: prismic.SliceZone<FinsterkammerDocumentDataSlicesSlice>; /**
+   * Meta Title field in *finsterKammer*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: finsterkammer.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  meta_title: prismic.KeyTextField;
+
+  /**
+   * Meta Description field in *finsterKammer*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: finsterkammer.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *finsterKammer*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: finsterkammer.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  meta_image: prismic.ImageField<never>;
+}
+
+/**
+ * finsterKammer document from Prismic
+ *
+ * - **API ID**: `finsterkammer`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/content-modeling
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type FinsterkammerDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<FinsterkammerDocumentData>,
+    "finsterkammer",
+    Lang
+  >;
+
 /**
  * Item in *footer → social Media*
  */
@@ -281,7 +413,7 @@ interface HomeDocumentData {
  * @typeParam Lang - Language API ID of the document.
  */
 export type HomeDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithUID<Simplify<HomeDocumentData>, "home", Lang>;
+  prismic.PrismicDocumentWithoutUID<Simplify<HomeDocumentData>, "home", Lang>;
 
 type IllustrationsDocumentDataSlicesSlice = GallerySlice;
 
@@ -342,7 +474,7 @@ interface IllustrationsDocumentData {
  * @typeParam Lang - Language API ID of the document.
  */
 export type IllustrationsDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithUID<
+  prismic.PrismicDocumentWithoutUID<
     Simplify<IllustrationsDocumentData>,
     "illustrations",
     Lang
@@ -460,13 +592,81 @@ export type SettingsDocument<Lang extends string = string> =
     Lang
   >;
 
+type SpeakerDocumentDataSlicesSlice = never;
+
+/**
+ * Content for Sprecher documents
+ */
+interface SpeakerDocumentData {
+  /**
+   * Slice Zone field in *Sprecher*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: speaker.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/slices
+   */
+  slices: prismic.SliceZone<SpeakerDocumentDataSlicesSlice>; /**
+   * Meta Title field in *Sprecher*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: speaker.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  meta_title: prismic.KeyTextField;
+
+  /**
+   * Meta Description field in *Sprecher*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: speaker.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Sprecher*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: speaker.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  meta_image: prismic.ImageField<never>;
+}
+
+/**
+ * Sprecher document from Prismic
+ *
+ * - **API ID**: `speaker`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/content-modeling
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type SpeakerDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<SpeakerDocumentData>,
+    "speaker",
+    Lang
+  >;
+
 export type AllDocumentTypes =
+  | ComicsDocument
+  | FinsterkammerDocument
   | FooterDocument
   | HeaderDocument
   | HomeDocument
   | IllustrationsDocument
   | PlainTextDocument
-  | SettingsDocument;
+  | SettingsDocument
+  | SpeakerDocument;
 
 /**
  * Item in *Blogposts → Default → Primary → Posts*
@@ -547,6 +747,50 @@ export type BlogpostsSlice = prismic.SharedSlice<
   "blogposts",
   BlogpostsSliceVariation
 >;
+
+/**
+ * Primary content in *Comic → Default → Primary*
+ */
+export interface ComicSliceDefaultPrimary {
+  /**
+   * Sides field in *Comic → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: comic.default.primary.sides
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  sides: prismic.Repeatable<
+    prismic.LinkField<string, string, unknown, prismic.FieldState, never>
+  >;
+}
+
+/**
+ * Default variation for Comic Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type ComicSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ComicSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Comic*
+ */
+type ComicSliceVariation = ComicSliceDefault;
+
+/**
+ * Comic Shared Slice
+ *
+ * - **API ID**: `comic`
+ * - **Description**: Comic
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type ComicSlice = prismic.SharedSlice<"comic", ComicSliceVariation>;
 
 /**
  * Item in *Gallery → Default → Primary → pictures*
@@ -652,6 +896,160 @@ type TextSliceVariation = TextSliceDefault;
  */
 export type TextSlice = prismic.SharedSlice<"text", TextSliceVariation>;
 
+/**
+ * Item in *SingleYoutubeVideo → Default → Primary → videos*
+ */
+export interface YoutubeVideoSliceDefaultPrimaryVideosItem {
+  /**
+   * Optionaler Titel field in *SingleYoutubeVideo → Default → Primary → videos*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: youtube_video.default.primary.videos[].titel
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  titel: prismic.KeyTextField;
+
+  /**
+   * video field in *SingleYoutubeVideo → Default → Primary → videos*
+   *
+   * - **Field Type**: Embed
+   * - **Placeholder**: *None*
+   * - **API ID Path**: youtube_video.default.primary.videos[].video
+   * - **Documentation**: https://prismic.io/docs/fields/embed
+   */
+  video: prismic.EmbedField;
+
+  /**
+   * Optionaler Text field in *SingleYoutubeVideo → Default → Primary → videos*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: youtube_video.default.primary.videos[].text
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  text: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *SingleYoutubeVideo → Default → Primary*
+ */
+export interface YoutubeVideoSliceDefaultPrimary {
+  /**
+   * videos field in *SingleYoutubeVideo → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: youtube_video.default.primary.videos[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  videos: prismic.GroupField<
+    Simplify<YoutubeVideoSliceDefaultPrimaryVideosItem>
+  >;
+}
+
+/**
+ * Default variation for SingleYoutubeVideo Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type YoutubeVideoSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<YoutubeVideoSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *SingleYoutubeVideo*
+ */
+type YoutubeVideoSliceVariation = YoutubeVideoSliceDefault;
+
+/**
+ * SingleYoutubeVideo Shared Slice
+ *
+ * - **API ID**: `youtube_video`
+ * - **Description**: YoutubeVideo
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type YoutubeVideoSlice = prismic.SharedSlice<
+  "youtube_video",
+  YoutubeVideoSliceVariation
+>;
+
+/**
+ * Item in *YoutubeVideoPlaylist → Default → Primary → Playlist*
+ */
+export interface YoutubeVideoPlaylistSliceDefaultPrimaryPlaylistItem {
+  /**
+   * video field in *YoutubeVideoPlaylist → Default → Primary → Playlist*
+   *
+   * - **Field Type**: Embed
+   * - **Placeholder**: *None*
+   * - **API ID Path**: youtube_video_playlist.default.primary.playlist[].video
+   * - **Documentation**: https://prismic.io/docs/fields/embed
+   */
+  video: prismic.EmbedField;
+}
+
+/**
+ * Primary content in *YoutubeVideoPlaylist → Default → Primary*
+ */
+export interface YoutubeVideoPlaylistSliceDefaultPrimary {
+  /**
+   * Optional Titel field in *YoutubeVideoPlaylist → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: youtube_video_playlist.default.primary.optionalTitel
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  optionalTitel: prismic.KeyTextField;
+
+  /**
+   * Playlist field in *YoutubeVideoPlaylist → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: youtube_video_playlist.default.primary.playlist[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  playlist: prismic.GroupField<
+    Simplify<YoutubeVideoPlaylistSliceDefaultPrimaryPlaylistItem>
+  >;
+}
+
+/**
+ * Default variation for YoutubeVideoPlaylist Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type YoutubeVideoPlaylistSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<YoutubeVideoPlaylistSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *YoutubeVideoPlaylist*
+ */
+type YoutubeVideoPlaylistSliceVariation = YoutubeVideoPlaylistSliceDefault;
+
+/**
+ * YoutubeVideoPlaylist Shared Slice
+ *
+ * - **API ID**: `youtube_video_playlist`
+ * - **Description**: YoutubeVideoPlaylist
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type YoutubeVideoPlaylistSlice = prismic.SharedSlice<
+  "youtube_video_playlist",
+  YoutubeVideoPlaylistSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -673,6 +1071,12 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
+      ComicsDocument,
+      ComicsDocumentData,
+      ComicsDocumentDataSlicesSlice,
+      FinsterkammerDocument,
+      FinsterkammerDocumentData,
+      FinsterkammerDocumentDataSlicesSlice,
       FooterDocument,
       FooterDocumentData,
       FooterDocumentDataSocialMediaItem,
@@ -692,12 +1096,19 @@ declare module "@prismicio/client" {
       SettingsDocument,
       SettingsDocumentData,
       SettingsDocumentDataBackgroundItem,
+      SpeakerDocument,
+      SpeakerDocumentData,
+      SpeakerDocumentDataSlicesSlice,
       AllDocumentTypes,
       BlogpostsSlice,
       BlogpostsSliceDefaultPrimaryPostsItem,
       BlogpostsSliceDefaultPrimary,
       BlogpostsSliceVariation,
       BlogpostsSliceDefault,
+      ComicSlice,
+      ComicSliceDefaultPrimary,
+      ComicSliceVariation,
+      ComicSliceDefault,
       GallerySlice,
       GallerySliceDefaultPrimaryPicturesItem,
       GallerySliceDefaultPrimary,
@@ -707,6 +1118,16 @@ declare module "@prismicio/client" {
       TextSliceDefaultPrimary,
       TextSliceVariation,
       TextSliceDefault,
+      YoutubeVideoSlice,
+      YoutubeVideoSliceDefaultPrimaryVideosItem,
+      YoutubeVideoSliceDefaultPrimary,
+      YoutubeVideoSliceVariation,
+      YoutubeVideoSliceDefault,
+      YoutubeVideoPlaylistSlice,
+      YoutubeVideoPlaylistSliceDefaultPrimaryPlaylistItem,
+      YoutubeVideoPlaylistSliceDefaultPrimary,
+      YoutubeVideoPlaylistSliceVariation,
+      YoutubeVideoPlaylistSliceDefault,
     };
   }
 }
