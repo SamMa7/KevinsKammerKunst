@@ -19,10 +19,10 @@
     <Modal v-model:show-modal="open">
       <div class="p-10 flex size-full justify-center items-center">
         <button 
-            class="btn-link fixed right-5 top-5"  
+            class="btn-link-light fixed right-5 top-5"  
             @click="open = false"
         > 
-            <Icon name="mdi:close" size="25"/> 
+            <Icon name="mdi:close" size="30"/> 
         </button>
         <ClientOnly>
           <Flipbook 
@@ -30,19 +30,19 @@
             class="flipbook" 
             :zooms="[1]"
             :startPage="0"
-            :pages="currentComic?.slides.map(slide => getUrl(slide))" 
+            :pages="currentComicPages" 
           > 
             <button 
               class="btn-dark rounded-full size-12 z-50 fixed left-32 top-1/2"
               :disabled="!flipBookRef.canFlipLeft"
-              @click="flipBookRef.flipLeft()"
+              @click="flipBookRef.flipLeft"
             >
               <Icon name="mdi:arrow-left" size="25"/>
             </button>
             <button 
               class="btn-dark rounded-full size-12 z-50 fixed right-32 top-1/2"
               :disabled="!flipBookRef.canFlipRight"
-              @click="flipBookRef.flipRight()"
+              @click="flipBookRef.flipRight"
             >
               <Icon name="mdi:arrow-right" size="25"/>
             </button>
@@ -63,6 +63,11 @@
 
   const open = ref(false);
   const currentComic = ref<Content.ComicSliceDefaultPrimaryComicsItem | undefined>(undefined);
+  const currentComicPages = computed(() => {
+    return (currentComic.value?.slides ?? [])
+      .map((slide) => getUrl(slide))
+      .filter((url): url is string => Boolean(url));
+  });
 
   const openComicModal = (comic: Content.ComicSliceDefaultPrimaryComicsItem) => {
     if(!comic) return;
