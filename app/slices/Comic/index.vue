@@ -3,16 +3,29 @@
     :data-slice-type="slice.slice_type"
     :data-slice-variation="slice.variation"
   >
-    <div class="grid grid-cols-5 gap-10">
-      <div v-for="comic in slice.primary.comics">
+    <div class="grid grid-cols-4 gap-10">
+      <div v-for="comic in slice.primary.comics" @click="openComicModal(comic)">
         <h3>{{ comic.title }}</h3>
-        <NuxtImg 
-          v-if="comic.slides[0]"
-          class="object-contain h-[250px] hover:cursor-pointer" 
-          loading="lazy" 
-          :src="getUrl(comic.slides[0])"
-          @click="openComicModal(comic)"
-        />
+        <div class="relative group hover:z-50">
+          <NuxtImg 
+            v-if="comic.slides[2]"
+            class="object-contain h-[250px] z-10 absolute top-0 transition-all group-hover:scale-110 group-hover:origin-bottom group-hover:rotate-[24deg]" 
+            loading="lazy" 
+            :src="getUrl(comic.slides[2])"
+          />
+          <NuxtImg 
+            v-if="comic.slides[1]"
+            class="object-contain h-[250px] z-20 absolute top-0 transition-all group-hover:scale-110 group-hover:origin-bottom group-hover:rotate-12" 
+            loading="lazy" 
+            :src="getUrl(comic.slides[1])"
+          />
+          <NuxtImg 
+            v-if="comic.slides[0]"
+            class="object-contain h-[250px] z-30 absolute top-0 hover:cursor-pointer transition-all group-hover:scale-110" 
+            loading="lazy" 
+            :src="getUrl(comic.slides[0])"
+          /> 
+        </div>
       </div>
     </div>
 
@@ -75,8 +88,4 @@
     open.value = true;
     currentComic.value = comic;
   }
-
-/*
-*
-*/
 </script>
