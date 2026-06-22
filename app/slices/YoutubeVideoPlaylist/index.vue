@@ -3,8 +3,8 @@
 
   defineProps(getSliceComponentProps<Content.YoutubeVideoPlaylistSlice>());
     
-  const swiperRef = ref(null)
-  const swiper = useSwiper(swiperRef)
+  const swiperRef = ref(null);
+  const swiper = useSwiper(swiperRef);
 </script>
 
 <template>
@@ -15,15 +15,15 @@
     <h2>{{ slice.primary.titel }}</h2>
     <div class="flex items-center pt-5 gap-3">
       <button 
-        class="btn-dark rounded-full size-12 min-w-12"^
+        v-if="slice.primary.playlist.length > 3"
+        class="btn-dark rounded-full size-12 min-w-12"
         :disabled="swiper.isBeginning.value"
         @click="swiper.prev()"
       >
         <Icon name="mdi:arrow-left" size="25"/>
       </button>
       <ClientOnly>
-        <swiper-container ref="swiperRef" :slides-per-view="3" class="grow max-w-full overflow-hidden">
-          
+        <swiper-container ref="swiperRef" :slides-per-view="3" class="grow max-w-full overflow-hidden"> 
           <swiper-slide
             v-for="(video, idx) in slice.primary.playlist"
             :key="idx"
@@ -34,12 +34,13 @@
         </swiper-container>
       </ClientOnly>
       <button 
+        v-if="slice.primary.playlist.length > 3"
         class="btn-dark rounded-full size-12 min-w-12"
         :disabled="swiper.isEnd.value"
         @click="swiper.next()"
       >
         <Icon name="mdi:arrow-right" size="25"/>
-      </button>
+    </button>
     </div>
   </section>
 </template>

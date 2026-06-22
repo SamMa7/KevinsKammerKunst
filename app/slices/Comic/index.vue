@@ -3,9 +3,9 @@
     :data-slice-type="slice.slice_type"
     :data-slice-variation="slice.variation"
   >
-    <div class="grid grid-cols-4 gap-10">
+    <div class="grid grid-cols-3 w-full">
       <div v-for="comic in slice.primary.comics" @click="openComicModal(comic)">
-        <h2>{{ comic.title }}</h2>
+        <h2 class="pb-8">{{ comic.title }}</h2>
         <div class="relative group hover:z-50">
           <NuxtImg 
             v-if="comic.slides[2]"

@@ -55,8 +55,13 @@ a {
 }
 
 nav {
+    @apply transition-all;
+
     & a {
-        @apply text-light hover:text-secondary text-base text-nowrap;  
+        @apply text-light hover:text-secondary text-base text-nowrap transition-all hover:no-underline;  
+    }
+    & .router-link-active {
+        @apply text-secondary font-bold transition-all hover:text-teritiary;
     }
 }
 

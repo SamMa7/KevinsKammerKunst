@@ -695,6 +695,17 @@ export interface AudioSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/fields/rich-text
    */
   description: prismic.RichTextField;
+
+  /**
+   * Audio neben Titel field in *Audio → Default → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: audio.default.primary.audioNextToTitle
+   * - **Documentation**: https://prismic.io/docs/fields/boolean
+   */
+  audioNextToTitle: prismic.BooleanField;
 }
 
 /**

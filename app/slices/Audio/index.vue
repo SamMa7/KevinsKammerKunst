@@ -11,10 +11,15 @@ defineProps(getSliceComponentProps<Content.AudioSlice>());
     :data-slice-variation="slice.variation"
   >
     <div class="flex flex-col gap-5">
-      <h2>{{ slice.primary.sound.text }}</h2>
-      <audio controls>
-        <source :src="getUrl(slice.primary.sound)" type="audio/mp3">
-      </audio>
+      <div 
+        class="flex"
+        :class="slice.primary.audioNextToTitle ? 'items-center gap-10' : 'flex-col  gap-5'"
+      >
+        <h2 class="text-nowrap">{{ slice.primary.sound.text }}</h2>
+        <audio controls class="w-full">
+          <source :src="getUrl(slice.primary.sound)" type="audio/mp3">
+        </audio>
+      </div>
       <div class="rich-text">
         <PrismicRichText :field="slice.primary.description" />
       </div>

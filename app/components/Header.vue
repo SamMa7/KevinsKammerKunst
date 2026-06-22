@@ -12,12 +12,12 @@
             </div>
 
             <nav class="flex gap-10">
-                <a 
+                <NuxtLink 
                     v-for="link in header?.data.navigation" class="flex items-center"
-                    :href="getUrl(link.link)"
+                    :to="getUrl(link.link)"
                 > 
                     {{link.link.text}}
-                </a>
+                </NuxtLink>
             </nav>
         </div>
     </header>

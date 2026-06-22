@@ -4,8 +4,8 @@
 		"variation": "default",
 		"primary": {
 			"sound": {
-				"__TYPE__": "LinkContent",
 				"key": "d9775ede-1416-4f09-a532-36516493394e",
+				"__TYPE__": "LinkContent",
 				"value": {
 					"__TYPE__": "FileLink",
 					"id": "mock_Media_link",
@@ -26,6 +26,10 @@
 						}
 					}
 				]
+			},
+			"audioNextToTitle": {
+				"__TYPE__": "BooleanContent",
+				"value": false
 			}
 		},
 		"items": []

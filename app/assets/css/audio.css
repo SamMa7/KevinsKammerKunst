@@ -1,0 +1,6 @@
+@tailwind components;
+@tailwind utilities;
+
+audio::-webkit-media-controls-panel {
+    @apply bg-teritiary;
+}
