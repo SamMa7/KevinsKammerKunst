@@ -2,21 +2,24 @@
     <footer class="w-full bg-dark text-light flex justify-center">
         <div class="footer-header-container flex justify-between px-52 py-3">
             <div class="flex gap-8 justify-center">
-                <a 
-                    v-for="link in footer?.data.social_media" class="flex items-center"
-                    :href="getUrl(link.link)"
-                > 
+                <NuxtLink 
+                    v-for="link in footer?.data.social_media" 
+                    class="flex items-center"
+                    :target="link.link.target ? '_blank' : ''"
+                    :to="getUrl(link.link)"
+                >   
                     <Icon :name="`mdi:${link.link.text?.toLowerCase()}`" size="30"/>
-                </a>
+                </NuxtLink>
             </div>
             <div class="flex gap-3 justify-center">
-                <a 
+                <NuxtLink 
                     v-for="(link, index) in footer?.data.other_links" class="flex items-center"
-                    :href="getUrl(link.link)"
+                    :to="getUrl(link.link)"
+                    :target="link.link.target ? '_blank' : ''"
                 > 
                     {{link.link.text}}
                     <span v-if="index !== ((footer?.data.other_links.length ?? 0)-1)" class="pl-3"> | </span>
-                </a>
+                </NuxtLink>
             </div>
         </div>
     </footer>
