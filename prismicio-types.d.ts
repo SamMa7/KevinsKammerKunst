@@ -592,14 +592,14 @@ export type SettingsDocument<Lang extends string = string> =
     Lang
   >;
 
-type SpeakerDocumentDataSlicesSlice = never;
+type SpeakerDocumentDataSlicesSlice = AudioSlice | YoutubeVideoSlice;
 
 /**
- * Content for Sprecher documents
+ * Content for Speaker documents
  */
 interface SpeakerDocumentData {
   /**
-   * Slice Zone field in *Sprecher*
+   * Slice Zone field in *Speaker*
    *
    * - **Field Type**: Slice Zone
    * - **Placeholder**: *None*
@@ -608,7 +608,7 @@ interface SpeakerDocumentData {
    * - **Documentation**: https://prismic.io/docs/slices
    */
   slices: prismic.SliceZone<SpeakerDocumentDataSlicesSlice>; /**
-   * Meta Title field in *Sprecher*
+   * Meta Title field in *Speaker*
    *
    * - **Field Type**: Text
    * - **Placeholder**: A title of the page used for social media and search engines
@@ -619,7 +619,7 @@ interface SpeakerDocumentData {
   meta_title: prismic.KeyTextField;
 
   /**
-   * Meta Description field in *Sprecher*
+   * Meta Description field in *Speaker*
    *
    * - **Field Type**: Text
    * - **Placeholder**: A brief summary of the page
@@ -630,7 +630,7 @@ interface SpeakerDocumentData {
   meta_description: prismic.KeyTextField;
 
   /**
-   * Meta Image field in *Sprecher*
+   * Meta Image field in *Speaker*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
@@ -642,7 +642,7 @@ interface SpeakerDocumentData {
 }
 
 /**
- * Sprecher document from Prismic
+ * Speaker document from Prismic
  *
  * - **API ID**: `speaker`
  * - **Repeatable**: `false`
@@ -667,6 +667,58 @@ export type AllDocumentTypes =
   | PlainTextDocument
   | SettingsDocument
   | SpeakerDocument;
+
+/**
+ * Primary content in *Audio → Default → Primary*
+ */
+export interface AudioSliceDefaultPrimary {
+  /**
+   * sound field in *Audio → Default → Primary*
+   *
+   * - **Field Type**: Link to Media
+   * - **Placeholder**: *None*
+   * - **API ID Path**: audio.default.primary.sound
+   * - **Documentation**: https://prismic.io/docs/fields/link-to-media
+   */
+  sound: prismic.LinkToMediaField<prismic.FieldState, never>;
+
+  /**
+   * optional text field in *Audio → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: audio.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  description: prismic.RichTextField;
+}
+
+/**
+ * Default variation for Audio Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type AudioSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<AudioSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Audio*
+ */
+type AudioSliceVariation = AudioSliceDefault;
+
+/**
+ * Audio Shared Slice
+ *
+ * - **API ID**: `audio`
+ * - **Description**: Audio
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type AudioSlice = prismic.SharedSlice<"audio", AudioSliceVariation>;
 
 /**
  * Item in *Blogposts → Default → Primary → Posts*
@@ -1125,6 +1177,10 @@ declare module "@prismicio/client" {
       SpeakerDocumentData,
       SpeakerDocumentDataSlicesSlice,
       AllDocumentTypes,
+      AudioSlice,
+      AudioSliceDefaultPrimary,
+      AudioSliceVariation,
+      AudioSliceDefault,
       BlogpostsSlice,
       BlogpostsSliceDefaultPrimaryPostsItem,
       BlogpostsSliceDefaultPrimary,
