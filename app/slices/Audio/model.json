@@ -15,7 +15,7 @@
         "sound": {
           "type": "Link",
           "config": {
-            "label": "sound",
+            "label": "Audio",
             "placeholder": "",
             "select": "media",
             "allowText": true

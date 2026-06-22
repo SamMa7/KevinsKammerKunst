@@ -15,20 +15,20 @@
         "comics": {
           "type": "Group",
           "config": {
-            "label": "comics",
+            "label": "Comics",
             "repeat": true,
             "fields": {
               "title": {
                 "type": "Text",
                 "config": {
-                  "label": "title",
+                  "label": "Titel",
                   "placeholder": ""
                 }
               },
               "slides": {
                 "type": "Link",
                 "config": {
-                  "label": "slides",
+                  "label": "Seiten",
                   "placeholder": "",
                   "select": null,
                   "allowTargetBlank": false,

@@ -16,8 +16,8 @@
 									"type": "Link",
 									"value": [
 										{
-											"key": "fc44f3f4-8487-43ea-a1a8-836b310d89fd",
 											"__TYPE__": "LinkContent",
+											"key": "9abb7281-be0a-49ab-8d20-554aa75366e3",
 											"value": {
 												"__TYPE__": "ExternalLink",
 												"url": "https://slicemachine.dev"
@@ -30,7 +30,7 @@
 								"title",
 								{
 									"__TYPE__": "FieldContent",
-									"value": "express",
+									"value": "barn",
 									"type": "Text"
 								}
 							]

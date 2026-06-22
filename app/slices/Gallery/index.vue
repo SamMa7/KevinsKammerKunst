@@ -6,7 +6,7 @@
     <div class="columns-1 gap-3 sm:columns-2 sm:gap-8 md:columns-3 lg:columns-4 [&>img:not(:first-child)]:mt-8">
       <NuxtImg 
         v-for="(picture, _index) in slice.primary.pictures" 
-        class="w-full h-auto" 
+        class="w-full h-auto hover:cursor-pointer" 
         loading="lazy" 
         :alt="picture.picture.alt" 
         :src="picture.picture.url ?? undefined"

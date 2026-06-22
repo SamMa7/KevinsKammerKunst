@@ -62,14 +62,14 @@ nav {
 
 /* TEXT */
 p {
-    @apply font-sans max-w-xl;
+    @apply font-sans text-justify;
 }
 
 /* MAIN */
-.container-lg {
-    @apply w-full max-w-screen-lg;
+.main-container {
+    @apply w-full max-w-screen-lg bg-light px-24 py-10 z-10 relative;
 }
-.container-xl {
+.footer-header-container {
     @apply w-full max-w-screen-xl;
 }
 
@@ -100,10 +100,3 @@ p {
 .playlist-youtube-video > iframe {
     @apply w-[350px] h-auto aspect-video;
 }
-
-/*
-* NOTES:
-* not less then 400 weight
-* 45 -75 character per line
-* 
-*/

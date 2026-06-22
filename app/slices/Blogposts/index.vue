@@ -10,7 +10,7 @@ defineProps(getSliceComponentProps<Content.BlogpostsSlice>());
     :data-slice-variation="slice.variation"
   >
     <div class="flex flex-col gap-10 items-center">
-      <div v-for="item in slice.primary.posts" class="speech-bubble size-fit">
+      <div v-for="item in slice.primary.posts" class="speech-bubble size-fit rich-text max-w-2xl">
         <div class="mb-5">
           <span class="italic text-sm text-secondary">{{ item.date }}</span>
           <h2>{{ item.title }}</h2>

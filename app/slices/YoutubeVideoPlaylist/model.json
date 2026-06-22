@@ -28,7 +28,7 @@
               "video": {
                 "type": "Embed",
                 "config": {
-                  "label": "video",
+                  "label": "Video",
                   "placeholder": ""
                 }
               }

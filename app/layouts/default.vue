@@ -22,7 +22,7 @@
             </ClientOnly>
 
             <!--CONTENT-->
-            <div id="main-container" class="container-lg bg-light px-14 py-10 z-10 relative"> 
+            <div id="main-container" class="main-container"> 
                 <slot />
 
                 <!--BACK TO TOP-->

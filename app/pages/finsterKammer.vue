@@ -17,7 +17,7 @@ useSeoMeta({
 </script>
 
 <template>
-    <main class="flex flex-col gap-32">
+    <main class="flex flex-col gap-12">
         <SliceZone :slices="page?.data.slices ?? []" :components="components" />
     </main>
 </template>

@@ -15,13 +15,13 @@
         "pictures": {
           "type": "Group",
           "config": {
-            "label": "pictures",
+            "label": "Bilder",
             "repeat": true,
             "fields": {
               "picture": {
                 "type": "Image",
                 "config": {
-                  "label": "picture",
+                  "label": "Bild",
                   "constraint": {},
                   "thumbnails": []
                 }

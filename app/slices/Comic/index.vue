@@ -5,7 +5,7 @@
   >
     <div class="grid grid-cols-4 gap-10">
       <div v-for="comic in slice.primary.comics" @click="openComicModal(comic)">
-        <h3>{{ comic.title }}</h3>
+        <h2>{{ comic.title }}</h2>
         <div class="relative group hover:z-50">
           <NuxtImg 
             v-if="comic.slides[2]"

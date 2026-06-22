@@ -677,7 +677,7 @@ export type AllDocumentTypes =
  */
 export interface AudioSliceDefaultPrimary {
   /**
-   * sound field in *Audio → Default → Primary*
+   * Audio field in *Audio → Default → Primary*
    *
    * - **Field Type**: Link to Media
    * - **Placeholder**: *None*
@@ -805,11 +805,11 @@ export type BlogpostsSlice = prismic.SharedSlice<
 >;
 
 /**
- * Item in *Comic → Default → Primary → comics*
+ * Item in *Comic → Default → Primary → Comics*
  */
 export interface ComicSliceDefaultPrimaryComicsItem {
   /**
-   * title field in *Comic → Default → Primary → comics*
+   * Titel field in *Comic → Default → Primary → Comics*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -819,7 +819,7 @@ export interface ComicSliceDefaultPrimaryComicsItem {
   title: prismic.KeyTextField;
 
   /**
-   * slides field in *Comic → Default → Primary → comics*
+   * Seiten field in *Comic → Default → Primary → Comics*
    *
    * - **Field Type**: Link
    * - **Placeholder**: *None*
@@ -836,7 +836,7 @@ export interface ComicSliceDefaultPrimaryComicsItem {
  */
 export interface ComicSliceDefaultPrimary {
   /**
-   * comics field in *Comic → Default → Primary*
+   * Comics field in *Comic → Default → Primary*
    *
    * - **Field Type**: Group
    * - **Placeholder**: *None*
@@ -874,11 +874,11 @@ type ComicSliceVariation = ComicSliceDefault;
 export type ComicSlice = prismic.SharedSlice<"comic", ComicSliceVariation>;
 
 /**
- * Item in *Gallery → Default → Primary → pictures*
+ * Item in *Gallery → Default → Primary → Bilder*
  */
 export interface GallerySliceDefaultPrimaryPicturesItem {
   /**
-   * picture field in *Gallery → Default → Primary → pictures*
+   * Bild field in *Gallery → Default → Primary → Bilder*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
@@ -893,7 +893,7 @@ export interface GallerySliceDefaultPrimaryPicturesItem {
  */
 export interface GallerySliceDefaultPrimary {
   /**
-   * pictures field in *Gallery → Default → Primary*
+   * Bilder field in *Gallery → Default → Primary*
    *
    * - **Field Type**: Group
    * - **Placeholder**: *None*
@@ -940,7 +940,7 @@ export type GallerySlice = prismic.SharedSlice<
  */
 export interface TextSliceDefaultPrimary {
   /**
-   * text field in *Text → Default → Primary*
+   * Text field in *Text → Default → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -1002,7 +1002,7 @@ export interface YoutubeVideoSliceDefaultPrimary {
   video: prismic.EmbedField;
 
   /**
-   * desription field in *SingleYoutubeVideo → Default → Primary*
+   * Beschreibung field in *SingleYoutubeVideo → Default → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -1047,7 +1047,7 @@ export type YoutubeVideoSlice = prismic.SharedSlice<
  */
 export interface YoutubeVideoPlaylistSliceDefaultPrimaryPlaylistItem {
   /**
-   * video field in *YoutubeVideoPlaylist → Default → Primary → Playlist*
+   * Video field in *YoutubeVideoPlaylist → Default → Primary → Playlist*
    *
    * - **Field Type**: Embed
    * - **Placeholder**: *None*
