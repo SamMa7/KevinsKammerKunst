@@ -11,6 +11,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "text": {
+              "type": "SharedSlice"
+            },
             "youtube_video_playlist": {
               "type": "SharedSlice"
             },

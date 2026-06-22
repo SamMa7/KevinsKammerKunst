@@ -12,7 +12,7 @@
     :data-slice-type="slice.slice_type"
     :data-slice-variation="slice.variation"
   >
-    <h2>{{ slice.primary.optionalTitel }}</h2>
+    <h2>{{ slice.primary.titel }}</h2>
     <div class="pt-2">
       <ClientOnly>
         <swiper-container ref="swiperRef" :slides-per-view="3">

@@ -11,10 +11,10 @@ defineProps(getSliceComponentProps<Content.YoutubeVideoSlice>());
     class="video-text"
   >
     <div class="flex flex-col gap-20 items-center">
-      <div v-for="video in slice.primary.videos" class="flex flex-col gap-5 w-4/5">
-        <h2>{{ video.titel }}</h2>
-        <div v-html="video.video?.html" class="single-youtube-video"/>
-        <PrismicRichText :field="video.text"/>
+      <div class="flex flex-col gap-5 w-4/5">
+        <h2>{{ slice.primary.titel }}</h2>
+        <div v-html="slice.primary.video?.html" class="single-youtube-video"/>
+        <PrismicRichText :field="slice.primary.desription"/>
       </div>
     </div>
   </section>

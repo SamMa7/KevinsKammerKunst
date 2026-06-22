@@ -69,7 +69,7 @@ type ContentRelationshipFieldWithData<
   >;
 }[Exclude<TCustomType[number], string>["id"]];
 
-type ComicsDocumentDataSlicesSlice = ComicSlice;
+type ComicsDocumentDataSlicesSlice = TextSlice | ComicSlice;
 
 /**
  * Content for comics documents
@@ -135,6 +135,7 @@ export type ComicsDocument<Lang extends string = string> =
   >;
 
 type FinsterkammerDocumentDataSlicesSlice =
+  | TextSlice
   | YoutubeVideoPlaylistSlice
   | YoutubeVideoSlice;
 
@@ -592,7 +593,10 @@ export type SettingsDocument<Lang extends string = string> =
     Lang
   >;
 
-type SpeakerDocumentDataSlicesSlice = AudioSlice | YoutubeVideoSlice;
+type SpeakerDocumentDataSlicesSlice =
+  | TextSlice
+  | AudioSlice
+  | YoutubeVideoSlice;
 
 /**
  * Content for Speaker documents
@@ -683,7 +687,7 @@ export interface AudioSliceDefaultPrimary {
   sound: prismic.LinkToMediaField<prismic.FieldState, never>;
 
   /**
-   * optional text field in *Audio → Default → Primary*
+   * Beschreibung field in *Audio → Default → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -974,55 +978,38 @@ type TextSliceVariation = TextSliceDefault;
 export type TextSlice = prismic.SharedSlice<"text", TextSliceVariation>;
 
 /**
- * Item in *SingleYoutubeVideo → Default → Primary → videos*
+ * Primary content in *SingleYoutubeVideo → Default → Primary*
  */
-export interface YoutubeVideoSliceDefaultPrimaryVideosItem {
+export interface YoutubeVideoSliceDefaultPrimary {
   /**
-   * Optionaler Titel field in *SingleYoutubeVideo → Default → Primary → videos*
+   * Titel field in *SingleYoutubeVideo → Default → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: youtube_video.default.primary.videos[].titel
+   * - **API ID Path**: youtube_video.default.primary.titel
    * - **Documentation**: https://prismic.io/docs/fields/text
    */
   titel: prismic.KeyTextField;
 
   /**
-   * video field in *SingleYoutubeVideo → Default → Primary → videos*
+   * video field in *SingleYoutubeVideo → Default → Primary*
    *
    * - **Field Type**: Embed
    * - **Placeholder**: *None*
-   * - **API ID Path**: youtube_video.default.primary.videos[].video
+   * - **API ID Path**: youtube_video.default.primary.video
    * - **Documentation**: https://prismic.io/docs/fields/embed
    */
   video: prismic.EmbedField;
 
   /**
-   * Optionaler Text field in *SingleYoutubeVideo → Default → Primary → videos*
+   * desription field in *SingleYoutubeVideo → Default → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: youtube_video.default.primary.videos[].text
+   * - **API ID Path**: youtube_video.default.primary.desription
    * - **Documentation**: https://prismic.io/docs/fields/rich-text
    */
-  text: prismic.RichTextField;
-}
-
-/**
- * Primary content in *SingleYoutubeVideo → Default → Primary*
- */
-export interface YoutubeVideoSliceDefaultPrimary {
-  /**
-   * videos field in *SingleYoutubeVideo → Default → Primary*
-   *
-   * - **Field Type**: Group
-   * - **Placeholder**: *None*
-   * - **API ID Path**: youtube_video.default.primary.videos[]
-   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
-   */
-  videos: prismic.GroupField<
-    Simplify<YoutubeVideoSliceDefaultPrimaryVideosItem>
-  >;
+  desription: prismic.RichTextField;
 }
 
 /**
@@ -1075,14 +1062,14 @@ export interface YoutubeVideoPlaylistSliceDefaultPrimaryPlaylistItem {
  */
 export interface YoutubeVideoPlaylistSliceDefaultPrimary {
   /**
-   * Optional Titel field in *YoutubeVideoPlaylist → Default → Primary*
+   * Titel field in *YoutubeVideoPlaylist → Default → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: youtube_video_playlist.default.primary.optionalTitel
+   * - **API ID Path**: youtube_video_playlist.default.primary.titel
    * - **Documentation**: https://prismic.io/docs/fields/text
    */
-  optionalTitel: prismic.KeyTextField;
+  titel: prismic.KeyTextField;
 
   /**
    * Playlist field in *YoutubeVideoPlaylist → Default → Primary*
@@ -1201,7 +1188,6 @@ declare module "@prismicio/client" {
       TextSliceVariation,
       TextSliceDefault,
       YoutubeVideoSlice,
-      YoutubeVideoSliceDefaultPrimaryVideosItem,
       YoutubeVideoSliceDefaultPrimary,
       YoutubeVideoSliceVariation,
       YoutubeVideoSliceDefault,

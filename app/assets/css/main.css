@@ -62,7 +62,7 @@ nav {
 
 /* TEXT */
 p {
-    @apply font-sans max-w-lg;
+    @apply font-sans max-w-xl;
 }
 
 /* MAIN */

@@ -12,36 +12,27 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
-        "videos": {
-          "type": "Group",
+        "titel": {
+          "type": "Text",
           "config": {
-            "label": "videos",
-            "repeat": true,
-            "fields": {
-              "titel": {
-                "type": "Text",
-                "config": {
-                  "label": "Optionaler Titel",
-                  "placeholder": ""
-                }
-              },
-              "video": {
-                "type": "Embed",
-                "config": {
-                  "label": "video",
-                  "placeholder": ""
-                }
-              },
-              "text": {
-                "type": "StructuredText",
-                "config": {
-                  "label": "Optionaler Text",
-                  "placeholder": "",
-                  "allowTargetBlank": true,
-                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
-                }
-              }
-            }
+            "label": "Titel",
+            "placeholder": ""
+          }
+        },
+        "video": {
+          "type": "Embed",
+          "config": {
+            "label": "video",
+            "placeholder": ""
+          }
+        },
+        "desription": {
+          "type": "StructuredText",
+          "config": {
+            "label": "desription",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
           }
         }
       },
