@@ -58,11 +58,17 @@ nav {
     @apply transition-all;
 
     & a {
-        @apply text-light hover:text-secondary text-base text-nowrap transition-all hover:no-underline;  
+        @apply hover:text-secondary text-base text-nowrap transition-all hover:no-underline
     }
-    & .router-link-active {
-        @apply text-secondary font-bold transition-all hover:text-teritiary;
-    }
+}
+.router-link-light {
+    @apply text-light;  
+}
+.router-link-dark {
+    @apply text-primary;  
+}
+.router-link-active {
+    @apply text-secondary font-bold transition-all hover:text-teritiary;
 }
 
 /* TEXT */
@@ -82,17 +88,7 @@ p {
     @apply bg-dark absolute w-full h-full opacity-80;
 }
 
-/* ANIMATON */
-.v-enter-active,
-.v-leave-active {
-    transition: opacity 0.3s ease;
-}
-
-.v-enter-from,
-.v-leave-to {
-    opacity: 0;
-}
-
+/* VIDEO */
 .single-youtube-video, 
 .playlist-youtube-video {
     @apply flex items-center;

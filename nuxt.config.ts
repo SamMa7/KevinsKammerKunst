@@ -43,7 +43,8 @@ export default defineNuxtConfig({
     '~/assets/css/bubble.css',
     '~/assets/css/richText.css',
     '~/assets/css/flipbook.css',
-    '~/assets/css/audio.css'
+    '~/assets/css/audio.css',
+    '~/assets/css/animation.css'
   ],
   googleFonts: {
     families: {

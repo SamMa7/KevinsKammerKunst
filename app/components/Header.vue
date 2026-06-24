@@ -6,24 +6,18 @@
                     v-if="header?.data?.logo.url"
                     :src="header?.data.logo.url"
                     :alt="header?.data.logo.alt ?? 'logo'"
-                    class=" h-14"
+                    class="size-14"
                 />
-                <h1>{{ header?.data.title}}</h1>
+                <h1 class="hidden lg:inline">{{ header?.data.title}}</h1>
             </div>
 
-            <nav class="flex gap-10">
-                <NuxtLink 
-                    v-for="link in header?.data.navigation" class="flex items-center"
-                    :to="getUrl(link.link)"
-                > 
-                    {{link.link.text}}
-                </NuxtLink>
-            </nav>
+            <Nav />
         </div>
     </header>
 </template>
 
 <script setup lang="ts">
-    import { getUrl } from '~/util/helperFunctions';
+    import Nav from './nav.vue';
+
     const header = useHeader();
 </script>
