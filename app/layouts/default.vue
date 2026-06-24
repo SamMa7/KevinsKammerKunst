@@ -5,6 +5,7 @@
 
         <div class="w-full flex justify-center grow relative">
             <!--BACKGROUND-->
+            
             <ClientOnly>
                 <div 
                     v-if="bgImgUrls && bgImgUrls.length"
@@ -60,7 +61,8 @@
 
     // METHODS
     const updateGrid = () => {
-        const element = window. document.getElementById('main-container');
+        if (window.innerWidth < 1045) return;
+        const element = window.document.getElementById('main-container');
 
         cols.value = Math.ceil(window.innerWidth / imgWidth);
         rows.value = Math.ceil((element ? element.clientHeight : window.innerHeight) / imgHeight);

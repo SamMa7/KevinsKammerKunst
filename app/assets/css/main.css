@@ -78,7 +78,7 @@ p {
 
 /* MAIN */
 .main-container {
-    @apply w-full max-w-screen-lg bg-light px-24 py-10 z-10 relative;
+    @apply w-full max-w-screen-lg bg-light p-10 sm:px-24 z-10 relative;
 }
 .footer-header-container {
     @apply w-full max-w-screen-xl;

@@ -1,6 +1,6 @@
 <template>
     <footer class="w-full bg-dark text-light flex justify-center">
-        <div class="footer-header-container flex justify-between px-52 py-3">
+        <div class="footer-header-container flex justify-between p-3 lg:px-52">
             <div class="flex gap-8 justify-center">
                 <NuxtLink 
                     v-for="link in footer?.data.social_media" 
