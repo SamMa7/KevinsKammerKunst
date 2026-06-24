@@ -1,8 +1,9 @@
+@import "@evomark/flipbook-vue/style";
 @tailwind components;
 @tailwind utilities;
-@import "@evomark/flipbook-vue/style";
+
 
 .flipbook {
-    @apply h-[90vh] w-[90vw];
+    @apply h-[98vh] w-[98vh] sm:h-[90vh] sm:w-[90vw];
 
 }
