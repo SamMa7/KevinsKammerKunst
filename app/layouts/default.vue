@@ -5,7 +5,6 @@
 
         <div class="w-full flex justify-center grow relative">
             <!--BACKGROUND-->
-            
             <ClientOnly>
                 <div 
                     v-if="bgImgUrls && bgImgUrls.length"
@@ -19,8 +18,8 @@
                         :style="{ backgroundImage: `url(${bgImgUrls[i % bgImgUrls.length]})` }"
                     />
                 </div>
-                <div class="overlay-dark" />
             </ClientOnly>
+            <div class="overlay-dark" />
 
             <!--CONTENT-->
             <div id="main-container" class="main-container"> 
@@ -47,6 +46,8 @@
     // Images size is set in Prismic: 196*277
     const imgWidth = 196;
     const imgHeight = 277;
+
+    const route = useRoute();
 
     const cols = ref(0);
     const rows = ref(0);
@@ -93,4 +94,8 @@
             },
         );
     });
+
+    watch(route, value => {
+        if(window) updateGrid();
+    }, {deep: true, immediate: true})
 </script>
