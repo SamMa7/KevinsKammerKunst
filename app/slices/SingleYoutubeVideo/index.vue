@@ -11,7 +11,7 @@ defineProps(getSliceComponentProps<Content.YoutubeVideoSlice>());
     class="video-text"
   >
     <div class="flex flex-col">
-      <div class="flex flex-col gap-5 w-full">
+      <div class="flex flex-col gap-8 w-full">
         <h2>{{ slice.primary.titel }}</h2>
         <div v-html="slice.primary.video?.html" class="single-youtube-video"/>
         <div class="rich-text">

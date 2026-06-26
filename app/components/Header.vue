@@ -8,7 +8,7 @@
                     :alt="header?.data.logo.alt ?? 'logo'"
                     class="size-14"
                 />
-                <h1 class="hidden lg:inline">{{ header?.data.title}}</h1>
+                <h1 class="hidden lg:inline text-light">{{ header?.data.title}}</h1>
             </div>
 
             <Nav />

@@ -10,10 +10,10 @@ defineProps(getSliceComponentProps<Content.AudioSlice>());
     :data-slice-type="slice.slice_type"
     :data-slice-variation="slice.variation"
   >
-    <div class="flex flex-col gap-5">
+    <div class="flex flex-col gap-8">
       <div 
         class="flex"
-        :class="slice.primary.audioNextToTitle ? 'items-center gap-10' : 'flex-col  gap-5'"
+        :class="slice.primary.audioNextToTitle ? 'items-center gap-10' : 'flex-col gap-8'"
       >
         <h2 class="text-nowrap">{{ slice.primary.sound.text }}</h2>
         <audio controls class="w-full">

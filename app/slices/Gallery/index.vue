@@ -3,7 +3,7 @@
     :data-slice-type="slice.slice_type"
     :data-slice-variation="slice.variation"
   >
-    <div class="gap-8 sm:columns-2 lg:columns-3 [&>img:not(:first-child)]:mt-8">
+    <div class="gap-5 sm:columns-2 lg:columns-3 [&>img:not(:first-child)]:mt-8">
       <NuxtImg 
         v-for="(picture, _index) in slice.primary.pictures" 
         class="w-full h-auto hover:cursor-pointer hover:scale-105 transition-all" 

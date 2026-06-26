@@ -13,7 +13,7 @@
     :data-slice-variation="slice.variation"
   >
     <h2>{{ slice.primary.titel }}</h2>
-    <div class="flex items-center pt-5 gap-3">
+    <div class="flex items-center pt-8 gap-3">
       <button 
         v-if="slice.primary.playlist.length > 3"
         class="btn-dark rounded-full size-12 min-w-12"
