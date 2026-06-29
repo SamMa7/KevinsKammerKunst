@@ -6,8 +6,9 @@ export default defineNuxtConfig({
   vite: {
     optimizeDeps: {
       include: [
-        '@prismicio/client',
         '@evomark/flipbook-vue',
+        '@prismicio/client',
+        'swiper/element/bundle'
       ]
     }
   },
@@ -34,7 +35,7 @@ export default defineNuxtConfig({
     "@nuxt/icon",
     "@nuxt/image",
     "nuxt-swiper",
-    "@vercel/analytics"
+    "@vercel/analytics",
   ],
   prismic: {
     endpoint: apiEndpoint || repositoryName
@@ -52,5 +53,9 @@ export default defineNuxtConfig({
       Caveat: [400, 700],
     },
     display: 'swap',
+  },
+  runtimeConfig: {
+    basicAuthUser: '',    // via NUXT_BASIC_AUTH_USER
+    basicAuthPassword: '', // via NUXT_BASIC_AUTH_PASSWORD
   },
 })
