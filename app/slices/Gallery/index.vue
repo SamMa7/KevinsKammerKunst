@@ -15,9 +15,9 @@
     </div>
 
     <Modal v-model:show-modal="open">
-      <div class="bg-light z-50 fixed top-2/4 left-2/4 -translate-x-1/2 -translate-y-1/2 w-11/12 sm:w-9/12 lg:w-8/12 h-5/6 rounded-md">
+      <div class="bg-light fixed top-2/4 left-2/4 -translate-x-1/2 -translate-y-1/2 w-11/12 sm:w-9/12 lg:w-8/12 h-5/6 rounded-md">
         <button 
-            class="btn-link fixed right-5 top-5"  
+            class="btn-link fixed right-5 top-5 z-50"  
             @click="open = false"
         > 
             <Icon name="mdi:close" size="25"/> 

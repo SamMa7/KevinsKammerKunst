@@ -44,7 +44,7 @@ export default defineNuxtConfig({
     '~/assets/css/main.css',
     '~/assets/css/bubble.css',
     '~/assets/css/richText.css',
-    '~/assets/css/flipbook.css',
+    '~/assets/css/comic.css',
     '~/assets/css/audio.css',
     '~/assets/css/animation.css'
   ],

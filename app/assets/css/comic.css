@@ -1,0 +1,11 @@
+@import "@evomark/flipbook-vue/style";
+@tailwind components;
+@tailwind utilities;
+
+.flipbook {
+    @apply h-[98vh] w-[98vh] sm:h-[90vh] sm:w-[90vw];
+}
+
+.comic-img {
+    @apply object-contain w-full max-h-[30rem] lg:max-h-[20rem] top-0 transition-all lg:group-hover:scale-110 lg:group-hover:origin-bottom;
+}
