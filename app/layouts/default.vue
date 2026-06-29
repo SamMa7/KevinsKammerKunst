@@ -14,7 +14,7 @@
                     <div
                         v-for="i in totalTiles"
                         :key="i"
-                        class="w-[196px] h-[277px] bg-cover opacity-60"
+                        class="w-[12.25rem] h-[17.5rem] bg-cover opacity-60"
                         :style="{ backgroundImage: `url(${bgImgUrls[i % bgImgUrls.length]})` }"
                     />
                 </div>

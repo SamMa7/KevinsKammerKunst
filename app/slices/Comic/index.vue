@@ -9,19 +9,19 @@
         <div class="relative group hover:z-50">
           <NuxtImg 
             v-if="comic.slides[2]"
-            class="object-contain h-[250px] z-10 top-0 transition-all group-hover:scale-110 group-hover:origin-bottom group-hover:rotate-[24deg]" 
+            class="object-contain h-[15.75rem] z-10 top-0 transition-all group-hover:scale-110 group-hover:origin-bottom group-hover:rotate-[24deg]" 
             loading="lazy" 
             :src="getUrl(comic.slides[2])"
           />
           <NuxtImg 
             v-if="comic.slides[1]"
-            class="object-contain h-[250px] z-20 absolute top-0 transition-all group-hover:scale-110 group-hover:origin-bottom group-hover:rotate-12" 
+            class="object-contain h-[15.75rem] z-20 absolute top-0 transition-all group-hover:scale-110 group-hover:origin-bottom group-hover:rotate-12" 
             loading="lazy" 
             :src="getUrl(comic.slides[1])"
           />
           <NuxtImg 
             v-if="comic.slides[0]"
-            class="object-contain h-[250px] z-30 absolute top-0 hover:cursor-pointer transition-all group-hover:scale-110" 
+            class="object-contain h-[15.75rem] z-30 absolute top-0 hover:cursor-pointer transition-all group-hover:scale-110" 
             loading="lazy" 
             :src="getUrl(comic.slides[0])"
           /> 

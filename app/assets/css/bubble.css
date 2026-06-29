@@ -12,7 +12,7 @@
 }
 
 .speech-bubble:before {
-    @apply border-[26px] -mt-[34px] border-r-primary;
+    @apply border-[26px] -mt-[2rem] border-r-primary;
 }
 .speech-bubble:after {
     @apply border-[20px] -mt-7 border-r-bubbleBg;

@@ -106,5 +106,5 @@ p {
 }
 
 .playlist-youtube-video > iframe {
-    @apply w-[350px] h-auto aspect-video;
+    @apply w-[22rem] h-auto aspect-video;
 }
