@@ -23,7 +23,19 @@
         <Icon name="mdi:arrow-left" size="25"/>
       </button>
       <ClientOnly>
-        <swiper-container ref="swiperRef" :slides-per-view="3" class="grow max-w-full overflow-hidden"> 
+        <swiper-container 
+          ref="swiperRef" 
+          :slides-per-view="1" 
+          :breakpoints="{
+            '640': {
+              slidesPerView: 2,
+            },
+            '768': {
+              slidesPerView: 3,
+            },
+          }"
+          class="grow max-w-full overflow-hidden"
+        > 
           <swiper-slide
             v-for="(video, idx) in slice.primary.playlist"
             :key="idx"
