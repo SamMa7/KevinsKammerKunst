@@ -34,6 +34,7 @@ export default defineNuxtConfig({
     "@nuxt/icon",
     "@nuxt/image",
     "nuxt-swiper",
+    "@vercel/analytics"
   ],
   prismic: {
     endpoint: apiEndpoint || repositoryName
