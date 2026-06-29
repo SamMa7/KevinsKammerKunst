@@ -4,7 +4,7 @@
         <div class="gap-10 hidden lg:flex">
             <NuxtLink 
                 v-for="link in header?.data.navigation" 
-                class="router-link-light"
+                class="nav-link router-link-light"
                 :to="getUrl(link.link)"
             > 
                 {{link.link.text}}
@@ -24,7 +24,7 @@
                 <NuxtLink 
                     v-for="link in header?.data.navigation" 
                     :to="getUrl(link.link)"
-                    class="text-xl text-right w-full router-link-dark"
+                    class="nav-link text-xl text-right w-full router-link-dark"
                     @click="showNav = false"
                 > 
                     {{link.link.text}}

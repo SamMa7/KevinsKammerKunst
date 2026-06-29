@@ -51,23 +51,19 @@ h6 {
 }
 .btn-link {
     @apply border-2 border-primary text-primary hover:bg-primary hover:text-light;
+    @apply disabled:border-grey disabled:text-grey disabled:pointer-events-none;
 }
 .btn-link-light {
     @apply border-2 border-light text-light hover:bg-primary;
 }
 
 /* LINKS */
-a {
+a, .link {
     @apply text-secondary hover:text-primary hover:underline transition-colors cursor-pointer w-fit;  
 }
-
-nav {
-    @apply transition-all;
-
-    & a {
+.nav-link {
         @apply hover:text-secondary text-base text-nowrap transition-all hover:no-underline
     }
-}
 .router-link-light {
     @apply text-light;  
 }
