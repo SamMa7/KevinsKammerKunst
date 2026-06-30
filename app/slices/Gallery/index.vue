@@ -79,9 +79,11 @@ import Pagination from "~/components/pagination.vue";
 
   const nextImage = () => {
     currentIndex.value++;
+    if (currentIndex.value%imagesPerPage === 0) currentPage.value++;
   }
   const prevImage = () => {
     currentIndex.value--;
+    if (currentIndex.value%imagesPerPage === (imagesPerPage-1)) currentPage.value--;
   }
 
 </script>
